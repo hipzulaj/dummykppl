@@ -16,6 +16,13 @@ class display_test extends TestCase
         $this->resetInstance();
     }
 
+	public function test_index()
+	{
+		$output = $this->request('GET', 'display/index');
+		$this->assertContains('<h3>Print tidak pernah semudah ini</h3>', $output);
+	
+	}
+	
 	public function test_display_index()
 	{
 		$output = $this->request('GET', 'display/index');
